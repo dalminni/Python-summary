@@ -1,5 +1,4 @@
-# Python-summary
-<!doctype html>
+
 <html>
 <head>
   <title>python</title>
