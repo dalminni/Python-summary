@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>자료형</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<p>
+  <font size="+1" color="blue">
+    <a href="https://dalminni.github.io/Python-summary/chap1.html"
+       target="_self">1.파이썬 시작하기</a> | <a href="https://dalminni.github.io/Python-summary/chap2.html"
+       target="_self">2.자료형</a> | <a href="https://dalminni.github.io/Python-summary/chap3.html"
+       target="_self">3.조건문</a> | <a href="https://dalminni.github.io/Python-summary/chap4.html"
+       target="_self">4.반복문</a> | <a href="https://dalminni.github.io/Python-summary/chap5.html"
+       target="_self">5.함수</a> | <a href="https://dalminni.github.io/Python-summary/chap6.html"
+       target="_self">6.예외 처리</a> | <a href="https://dalminni.github.io/Python-summary/chap7.html"
+      target="_self">7.모듈</a> | <a href="https://dalminni.github.io/Python-summary/chap8.html"
+      target="_self">8.클래스</a>
+  </font>
+  <br>
+  <br>
+<h1><font color="blue">Chapter02 자료형</font></h1>
+  <font size="+2"><b>|02-1|</b> <a href="https://dalminni.github.io/Python-summary/chap2-1.html"
+     target="_self">자료형</a></font><br>
+  <font size="+2"><b>|02-2|</b> <a href="https://dalminni.github.io/Python-summary/chap2-2.html"
+     target="_self">숫자</a></font><br>
+  <font size="+2"><b>|02-3|</b> 변수와 입력</font><br>
+  <font size="+2"><b>|02-4|</b> <a href="https://dalminni.github.io/Python-summary/chap2-4.html"
+     target="_self">숫자와 문자열의 다양한 기능</a></font>
+</p>
+<br>
+<br>
+<p>
+<font size="+2" color="#0101DF">[02-3] 변수와 입력 </font><br>
+<font siize="+1" color="blue">#변수 만들기/사용하기</font><br>
+<font siize="+1" color="blue">#변수</font>: 값을 저장할 때 사용하는 식별자<br>
+변수 선언 -> 값 할당 -> 변수참조<br>
+-변수선언: 변수 생성<br>
+-값 할당: =(등호) 우변의 값을 좌변에 할당<br>
+-변수 참조: 변수에서 값을 꺼내는 것<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+variable.py </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+         #변수 선언과 할당<br>
+          pi=3.14159265<br>
+          r=10<br>
+<br>
+          #변수 참조<br>
+          print("원주율=", pi)<br>
+          print("반지름=", r)<br>
+          print("원의 둘레=", 2*pi*r)<br>
+          print("원의 넓이=", pi*r*r)<br>
+      </td>
+      <td width="310">
+          원주율= 3.14159265<br>
+          반지름= 10<br>
+          원의 둘레= 62.831853<br>
+          원의 넓이= 314.159265<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#복합 대입 연산자</font>
+-숫자: +=, -=, *=, /=, %=. **=<br>
+-문자열: +=, *=<br>
+ex)
+>>> number = 100 <br>
+>>> number +=10<br>
+>>> print("number:", number)<br>
+number: 110<br>
+ex)
+>>> string = "안녕하세요"<br>
+>>> string += "!"<br>
+>>> print("string:", string)<br>
+string: 안녕하세요!<br>
+<br>
+<font size="+1" color="blue">#사용자 입력: input()</font><br>
+-()안 내용: 프롬프트 문자열, 사용자로부터 입력을 요구하는 안내 내용 포함<br>
+ex)>>> input("인사말을 입력하세요> ")<br>
+-블록(block): 프로그램 실행 도중 잠시 멈추는 것, input() 함수가 코드 진행을 블록하고 있음<br>
+-리턴값: 함수의 결과로 나오는 값<br>
+-함수 값 변수에 대입 가능<br>
+ex)
+>>> string = input("인사말을 입력하세요> ")<br>
+인사말을 입력하세요> 안녕하세요<br>
+>>> print(string)<br>
+안녕하세요<br>
+-자료형: 문자열<br>
+ex)<br>
+>>> number = input("숫자를 입력하세요> ")<br>
+숫자를 입력하세요> 12345<br>
+>>> print(type(number))<br>
+&lt;class 'str'><br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?
+'block':'none';" href="javascript:void(0)">
+input.py | </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        string=input("입력>")<br>
+<br>
+        #출력합니다.<br>
+        print("자료:", string)<br>
+        print("자료형:", type(string))
+      </td>
+      <td width="310">
+        입력> 52273<br>
+        자료:  52273<br>
+        자료형: <class 'str'>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+input_error.py </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td>
+        #입력을 받습니다.<br>
+        string=input("입력>")<br>
+        <br>
+        #출력합니다.<br>
+        print("입력+100:", string+100)<br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        입력>300<br>
+        Traceback (most recent call last):<br>
+          &nbsp; File "C:\Users\MinSeoJeong\Desktop\python_sample\input_error.py", line 5, in <module><br>
+            &nbsp;&nbsp;&nbsp;print("입력+100:", string+100)<br>
+        TypeError: can only concatenate str (not "int") to str<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#문자열을 숫자로 바꾸기(캐스트, cast)</font><br>
+-int() 함수: 문자열 -> int 자료형 <br>
+-float() 함수: 문자열 -> float 자료형 <br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?
+'block':'none';" href="javascript:void(0)">int_convert.py | </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        string_a=input("입력A>")<br>
+        int_a=int(string_a)<br>
+<br>
+        string_b=input("입력B>")<br>
+        int_b=int(string_b)<br>
+<br>
+        print("문자열 자료:", string_a, string_b)<br>
+        print("숫자 자료:", int_a + int_b)<br>
+      </td>
+      <td width="310">
+        입력A> 273<br>
+        입력B> 52<br>
+        문자열 자료:  273  52<br>
+        숫자 자료: 325<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?
+'block':'none';" href="javascript:void(0)">int_float01.py | </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        output_a=int("52")<br>
+        output_b=float("52.273")<br>
+<br>
+        print(type(output_a), 52)<br>
+        print(type(output_b), 52.273)<br>
+      </td>
+      <td width="310">
+        <class 'int'> 52<br>
+        <class 'float'> 52.273<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+int_float02.py </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        input_a=float(input("첫 번째 숫자>"))<br>
+        input_b=float(input("두 번째 숫자>"))<br>
+<br>
+        print("덧셋 결과:", input_a + input_b)<br>
+        print("뺄셈 결과:", input_a - input_b)<br>
+        print("곱셈 결과:", input_a * input_b)<br>
+        print("나눗셈 결과:", input_a / input_b)<br>
+      </td>
+      <td width="310">
+        첫 번째 숫자> 273<br>
+        두 번째 숫자> 52<br>
+        덧셋 결과: 325.0<br>
+        뺄셈 결과: 221.0<br>
+        곱셈 결과: 14196.0<br>
+        나눗셈 결과: 5.25<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#ValueError 예외</font><br>
+-숫자가 아닌 것을 숫자로 변환 ex) int("hello")<br>
+-소수점이 있는 숫자 형식의 문자열 int()함수로 변환 ex)int("52.273")<br>
+<br>
+<font size="+1" color="blue">#숫자를 문자열로 바꾸기</font>: str() 함수<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+str.py </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        output_a=str(52)<br>
+        output_b=str(52.273)<br>
+        print(type(output_a), output_a)<br>
+        print(type(output_b), output_b)<br>
+      </td>
+      <td width="310">
+        <class 'str'> 52<br>
+        <class 'str'> 52.273<br>
+      </td>
+    </tr>
+  </table>
+</div> <br>
+<br>
+
+</p>
+</body>
+</html>
