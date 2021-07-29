@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>chapter03-2 조건문</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<p>
+  <font size="+1" color="blue">
+    <a href="https://dalminni.github.io/Python-summary/chap1/chap1-3.html"
+       target="_self">1.파이썬 시작하기</a> | <a href="https://dalminni.github.io/Python-summary/chap2/chap2.html"
+       target="_self">2.자료형</a> | <a href="https://dalminni.github.io/Python-summary/chap3/chap3.html"
+       target="_self">3.조건문</a> | <a href="https://dalminni.github.io/Python-summary/chap4/chap4.html"
+       target="_self">4.반복문</a> | <a href="https://dalminni.github.io/Python-summary/chap5/chap5.html"
+       target="_self">5.함수</a> | <a href="https://dalminni.github.io/Python-summary/chap6/chap6.html"
+       target="_self">6.예외 처리</a> | <a href="https://dalminni.github.io/Python-summary/chap7/chap7.html"
+      target="_blank">7.모듈</a> | <a href="https://dalminni.github.io/Python-summary/chap8/chap8.html"
+      target="_blank">8.클래스</a>
+  </font>
+  <br>
+  <br>
+</p>
+<p>
+<h1><font color="blue">Chapter03-1 조건문</font></h1>
+  <font size="+2"><b>|03-1|</b> <a href="https://dalminni.github.io/Python-summary/chap3/chap3-1.html"
+     target="_self">불 자료형과 if 조건문</a></font><br>
+  <font size="+2"><b>|03-2|</b> if~else와 elif 구문</font><br>
+<br>
+<br>
+<p>
+<font size="+2" color="blue">[03-2] if~else와 elif 구문</font><br>
+<br>
+<font size="+1" color="blue">#else 조건문의 활용</font><br>
+-else: if 조건문이 거짓일 때 실행도는 부분<br>
+&nbsp;if 조건<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>조건이 참일 때 실행할 문장<br>
+&nbsp;else<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>조건이 거짓일 때 실행할 문장<br>
+*조건문이 오직 두 가지로 구분될 때 if else 구문 효율적<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition04.py </a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+      #입력을 받습니다.<br>
+      number = input("정수 입력> ")<br>
+      number = int(number)<br>
+      <br>
+      # 조건문을 사용합니다.<br>
+      if number %2 == 0:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;#조건이 참일 때, 즉 짝수 조건<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;print("짝수입니다")<br>
+      else:<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;#조건이 거짓일 때, 즉 홀수 조건<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;print("홀수입니다<br>
+      </td>
+      <td>
+      정수입력> 13<br>
+      홀수입니다<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#elif 구문</font><br>
+-elif: 세 개 이상의 조건 연결, if와 else 사이에 입력<br>
+&nbsp;if 조건A<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>조건A가 참일 때 실행할 문장<br>
+&nbsp;elif 조건B<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>조건B가 참일 때 실행할 문장<br>
+&nbsp;elif 조건C<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>조건C가 참일 때 실행할 문장<br>
+...
+&nbsp;else<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>모든 조건이 거짓일 때 문장<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition05.py </a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #날짜/시간과 관련된 기능을 가져옵니다.<br>
+        import datetime<br>
+        <br>
+        #현재 날짜/시간을 구하고<br>
+        #쉽게 사용할 수 있게 월을 변수에 저장합니다.<br>
+        now = datetime.datetime.now()<br>
+        month = now.month<br>
+        <br>
+        #조건문으로 계절을 확인합니다.<br>
+        if 3 <= month <= 5:<br>
+            print("현재는 봄입니다.")<br>
+        elif 6 <= month <= 8:<br>
+            print("현재는 여름입니다.")<br>
+        elif 9 <= month <=11:<br>
+            print("현재는 가을입니다.")<br>
+        else:<br>
+            print("현재는 겨울입니다.")<br>
+      </td>
+      <td width="310">
+        현재는 여름입니다.<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#if 조건문을 효율적으로 사용하기</font><br>
+-elif 구문 사용할 때 앞 단계 조건문에서 비교했던 것 한 번 더 하는지 확인<br>
+-예제 condition06 < condition07 프로그램 효율↑<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition06.py |</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #변수를 선언합니다.<br>
+        score = float(input("학점 입력> "))<br>
+        <br>
+        #조건문을 적용합니다.<br>
+        if score == 4.5:<br>
+            print("신")<br>
+        elif 4.2 <= score < 4.5:<br>
+            print("교수님의 사랑")<br>
+        elif 3.5 <= score < 4.2:<br>
+            print("현 체제의 수호자")<br>
+        elif 2.8 <= score < 3.5:<br>
+            print("일반인")<br>
+        elif 2.3 <= score < 2.8:<br>
+            print("일탈을 꿈꾸는 소시민")<br>
+        elif 1.75 <= score < 2.3:<br>
+            print("오락문화의 선구자")<br>
+        elif 1.0 <= score < 1.75:<br>
+            print("불가촉천민")<br>
+        elif 0.5 <= score < 1.0:<br>
+            print("자벌레")<br>
+        elif 0 < score < 0.5:<br>
+            print("플랑크톤")<br>
+        elif score == 0:<br>
+            print("시대를 앞서가는 혁명의 씨앗")<br>
+       </td>
+       <td width="310">
+         학점입력> 3.4<br>
+         일반인<br>
+       </td>
+     </tr>
+   </table>
+ </div>
+ <a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+ condition07.py</a><div style="DISPLAY: none">
+ <table border="1">
+     <tr>
+       <td width="310">
+         #변수를 선언합니다.<br>
+         score = float(input("학점 입력> "))<br>
+         <br>
+         #조건문을 적용합니다.<br>
+         if score == 4.5:<br>
+             print("신")<br>
+         elif 4.2 <= score:<br>
+             print("교수님의 사랑")<br>
+         elif 3.5 <= score:<br>
+             print("현 체제의 수호자")<br>
+         elif 2.8 <= score:<br>
+             print("일반인")<br>
+         elif 2.3 <= score:<br>
+             print("일탈을 꿈꾸는 소시민")<br>
+         elif 1.75 <= score:<br>
+             print("오락문화의 선구자")<br>
+         elif 1.0 <= score:<br>
+             print("불가촉천민")<br>
+         elif 0.5 <= score:<br>
+             print("자벌레")<br>
+         elif 0 < score:<br>
+             print("플랑크톤")<br>
+         else:<br>
+             print("시대를 앞서가는 혁명의 씨앗")<br>
+        </td>
+        <td width="310">
+          학점입력> 3.4<br>
+          일반인<br>
+        </td>
+      </tr>
+    </table>
+  </div><br>
+  <br>
+<font size="+1" color="blue">#False로 변환되는 값</font><br>
+-if 조건문의 매개변수에 불이 아닌 다른 값이 올 때는 자동으로 불로 변환된다<br>
+&nbsp;(if 조건문에 비교 연산자가 없고 어떤 변수만 놓여있을 때 대부분 이 변환 사용)<br>
+-어떤 값이 True, False로 변환되는지 알고있어야 함<br>
+&nbsp; False: None, 숫자 0(0.0), 빈 컨테이너(빈 문자열, 빈 바이트열, 빈 리스트 등) // 3가지<br>
+&nbsp; True: False 외 모든 것<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+false_value.py </a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        print("#if 조건문에 0 넣기")<br>
+        if 0:<br>
+            print("0은 True로 변환됩니다")<br>
+        else:<br>
+            print("0은 False로 변환됩니다")<br>
+        print()<br>
+        <br>
+        print("# if 조건문에 빈 문자열 넣기")<br>
+        if "":<br>
+            print("빈 문자열은 True로 변환됩니다")<br>
+        else:<br>
+            print("빈 문자열은 False로 변환됩니다")<br>
+     </td>
+     <td width="310">
+       #if 조건문에 0 넣기<br>
+       0은 False로 변환됩니다<br>
+       <br>
+       # if 조건문에 빈 문자열 넣기<br>
+       빈 문자열은 False로 변환됩니다<br>
+     </td>
+   </tr>
+ </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#pass 키워드</font><br>
+-if 조건문 사이에는 들여쓰기 4칸을 넣고 코드를 작성해야만 구문 성립<br>
+&nbsp; 예제) pass_keyword.py 실행 시 IndentationError 발생<br>
+&nbsp; *IndentationError: 들여쓰기가 잘못되어 있다<br>
+  <dl>
+    <dt>-코드 미구현 상태 표현(개발 중이라는 의미)</dt>
+    <dd>1. pass 키워드 ---예제) pass_keyword01.py<br>
+      if 구문 사이에 0을 넣어도 실행되지만 0의 의미를 파악하지 못할 수 있어 pass 키워드 제공<br>
+      <br>
+      2. raise NotImplementedError: 오류 강제 발생 ---예제) pass_keyword02.py<br>
+      raise 키워드 + NotImplementedError(미구현 상태 표현)
+    </dd>
+  </dl>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+pass_keyword.py | </a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        number = int(number)<br>
+        <br>
+        #조건문 사용<br>
+        if number > 0:<br>
+            #양수일 때: 아직 미구현 상태입니다.<br>
+        else:<br>
+            #음수일 때: 아직 미구현 상태입니다.<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+pass_keyword01.py |</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        number = int(number)<br>
+        <br>
+        #조건문 사용<br>
+        if number > 0:<br>
+            #양수일 때: 아직 미구현 상태입니다.<br>
+            pass
+        else:<br>
+            #음수일 때: 아직 미구현 상태입니다.<br>
+            pass<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+pass_keyword02.py</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        number = int(number)<br>
+        <br>
+        #조건문 사용<br>
+        if number > 0:<br>
+            #양수일 때: 아직 미구현 상태입니다.<br>
+            raise NotImplementedError<br>
+        else:<br>
+            #음수일 때: 아직 미구현 상태입니다.<br>
+            raise NotImplementedError<br>
+      </td>
+      <td width="310">
+        정수 입력> 10<br>
+        Traceback (most recent call last):<br>
+          &nbsp;&nbsp;File "pass_keyword02.py", line 8, in &lt;module><br>
+            &nbsp;&nbsp;&nbsp;&nbsp;raise NotImplementedError<br>
+        NotImplementedError<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+
+</p>
+</body>
+</html>

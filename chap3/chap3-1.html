@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Chapter03-1 조건문</title>
+  <meta charset="utf-8">
+</head>
+<body>
+<p>
+  <font size="+1" color="blue">
+    <a href="https://dalminni.github.io/Python-summary/chap1/chap1-3.html"
+       target="_self">1.파이썬 시작하기</a> | <a href="https://dalminni.github.io/Python-summary/chap2/chap2.html"
+       target="_self">2.자료형</a> | <a href="https://dalminni.github.io/Python-summary/chap3/chap3.html"
+       target="_self">3.조건문</a> | <a href="https://dalminni.github.io/Python-summary/chap4/chap4.html"
+       target="_self">4.반복문</a> | <a href="https://dalminni.github.io/Python-summary/chap5/chap5.html"
+       target="_self">5.함수</a> | <a href="https://dalminni.github.io/Python-summary/chap6/chap6.html"
+       target="_self">6.예외 처리</a> | <a href="https://dalminni.github.io/Python-summary/chap7/chap7.html"
+      target="_blank">7.모듈</a> | <a href="https://dalminni.github.io/Python-summary/chap8/chap8.html"
+      target="_blank">8.클래스</a>
+  </font>
+  <br>
+  <br>
+</p>
+<p>
+<h1><font color="blue">Chapter03-1 조건문</font></h1>
+  <font size="+2"><b>|03-1|</b> 불 자료형과 if 조건문</font><br>
+  <font size="+2"><b>|03-2|</b> <a href="https://dalminni.github.io/Python-summary/chap3/chap3-2.html"
+     target="_self"> if~else와 elif 구문 </a></font><br>
+</p>
+<br>
+<br>
+<p>
+<font size="+2" color="blue">[03-1] 불 자료형과 if 조건문</font><br>
+<br>
+<font size="+1" color="blue">#Boolean</font>(불린, 불리언): 기본적인 자료형으로 참과 거짓을 나타내는 값<br>
+-True(참), False(거짓)<br>
+<br>
+<font size="+1" color="blue">#불 만들기: 비교 연산자</font> ==, !=, <, >, <=, >= <br>
+  <table border="1">
+    <tr>
+      <td width="310">
+        -숫자 <br>
+        ex)>>> print(10 == 100)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; False<br>
+        <br>
+        *범위 구하기<br>
+        ex)>>> x=25<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; >>> print(10 < x < 30)<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; True <br>
+      </td>
+      <td width="310">
+        -문자열: 사전 순서(가나다순)로 앞에 있는 것이 작은 값 <br>
+        ex)>>> print("가방" < "하마")<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; True<br>
+        &nbsp;&nbsp;&nbsp;&nbsp; >>> print("가방" > "하마") <br>
+        &nbsp;&nbsp;&nbsp;&nbsp; False<br>
+      </td>
+    </tr>
+  </table>
+<br>
+<font size="+1" color="blue">#불 연산하기: 논리 연산자</font> not, and, or<br>
+-not: 아니다 <br>
+&nbsp;불(참과 거짓)을 반대로 전환 <br>
+&nbsp;단항 연산자<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+boolean.py </a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        x=10<br>
+        under_20=x<20<br>
+        print("uder_20:", under_20)<br>
+        print("not under_20:", not under_20)<br>
+      </td>
+      <td width="310">
+        uder_20: True<br>
+        not under_20: False<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+-and: 그리고<br>
+&nbsp;피연산자 두 개 모두 참일 때 True 출력, 그 외 False <br>
+&nbsp;ex)>>> print(True and True)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>>> print(True and False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False<br>
+<br>
+-or : 또는<br>
+&nbsp;피연산산자 두 개 모두 거짓일 때 False, 그 외 True <br>
+&nbsp;ex)>>> print(True or False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;True<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>>> print(False and False)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;False<br>
+<br>
+<font size="+1" color="blue">#if 조건문</font>: 조건에 따라 코드 실행 해거나 안 하 게 아는 구문<br>
+-기본적인 구조<br>
+&nbsp;if 불 값이 나오는 표현식<b>:</b><br>
+&nbsp;<font size="1px">□□□□</font>불 값이 참일 때 실행할 문장<br>
+*&nbsp;<font size="1px">□□□□</font>: 소프트탭(soft tab) 들여쓰기 4칸 넣어주는 기능<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition.py </a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number=input("정수입력>")<br>
+        number=int(number)<br>
+        <br>
+        #양수 조건<br>
+        if number > 0:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("양수입니다")<br>
+        <br>
+        #음수 조건<br>
+        if number < 0:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; print("음수입니다")<br>
+        <br>
+        #0조건<br>
+        if number == 0:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp; print("0입니다")<br>
+      </td>
+      <td width="310">
+        정수입력> 273<br>
+        양수입니다<br>
+        정수입력> -52<br>
+        음수입니다<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#날짜/시간 활용하기</font><br>
+*import: 모듈 가져오기<br>
+*datetime: 첫번째) 날짜, 시간 관련 모듈 /  두번째) 클래스<br>
+*now(): datetime 반환 클래스 매서드  // 객체 생성X 클래스에서 사용가능한 클래스<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+date.py |</a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="310">
+        #날짜/시간과 관련된 기능을 가져옵니다.<br>
+        import datetime<br>
+        <br>
+        #현재 날짜/시간을 구합니다.<br>
+        now=datetime.datetime.now()<br>
+        <br>
+        #출력합니다.<br>
+        print(now.year, "년")<br>
+        print(now.month, "월")<br>
+        print(now.day, "일")<br>
+        print(now.hour, "시")<br>
+        print(now.minute, "분")<br>
+        print(now.second, "초")<br>
+      </td>
+      <td width="310">
+        2021 년<br>
+        7 월<br>
+        28 일<br>
+        17 시<br>
+        41 분<br>
+        53 초<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+date01.py |</a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="620">
+        #날짜/시간과 관련된 기능을 가져옵니다.<br>
+        import datetime<br>
+        <br>
+        #현재 날짜/시간을 구합니다.<br>
+        now=datetime.datetime.now()
+
+        #출력합니다.<br>
+        print("{}년 {}월 {}일 {}시 {}분 {}초".format(<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.year,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.month,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.day,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.hour,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.minute,<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;now.second<br>
+        ))<br>
+      </td>
+    </tr>
+    <tr>
+     <td>
+       2021년 7월 28일 17시 44분 44초<br>
+     </td>
+   </tr>
+ </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+date02.py |</a><div style="DISPLAY: none">
+  <table border="1">
+    <tr>
+      <td width="620">
+        #날짜/시간과 관련된 기능을 가져옵니다.<br>
+        import datetime<br>
+        <br>
+        #현재 날짜/시간을 구합니다.
+        now=datetime.datetime.now()<br>
+        <br>
+        #오전 구분<br>
+        if now.hour < 12:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("현재 시간은 {}시로 오전입니다!".format(now.hour))<br>
+        <br>
+        #오후 구분<br>
+        if now.hour >= 12:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("현재 시간은 {}시로 오후입니다!".format(now.hour))<br>
+      </td>
+    </tr>
+    <tr>
+     <td>
+       현재 시간은 17시로 오후입니다!<br>
+     </td>
+   </tr>
+ </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+date03.py</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="620">
+        #날짜/시간과 관련된 기능을 가져옵니다.<br>
+        import datetime<br>
+        <br>
+        #현재 날짜/시간을 구합니다.<br>
+        now=datetime.datetime.now()<br>
+        <br>
+        # 봄 구분<br>
+        if 3 <= now.month <= 5:<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;print("이번 달은 {}월로 봄입니다!".format(now.month))<br>
+        <br>
+        # 여름 구분<br>
+        if 6<= now.month <= 8:<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;print("이번 달은 {}월로 여름입니다!".format(now.month))<br>
+        <br>
+        # 가을 구분<br>
+        if 9<= now.month <= 11:<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;print("이번 달은 {}월로 가을입니다!".format(now.month))<br>
+        <br>
+        # 겨울 구분<br>
+        if now.month ==12 or 1<=now.month <= 2:<br>
+             &nbsp;&nbsp;&nbsp;&nbsp;print("이번 달은 {}월로 겨울입니다!".format(now.month))<br>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        "이번 달은 7월로 여름입니다!"<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+<font size="+1" color="blue">#컴퓨터의 조건</font><br>
+*줄이 길어질 때 \ 기호 입력하고 줄바꿈<br>
+<font size="+1" color="#FF00FF">□예제</font>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition01.py |</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        <br>
+        #마지막 자리 숫자를 추출<br>
+        last_character = number[-1]<br>
+        <br>
+        #숫자로 변환하기<br>
+        last_number = int(last_character)<br>
+        <br>
+        #짝수 확인<br>
+        if last_number == 0 \<br>
+            or last_number == 2 \<br>
+            or last_number == 4 \<br>
+            or last_number == 6 \<br>
+            or last_number == 8:<br>
+            print("짝수입니다")<br>
+        <br>
+        #홀수 확인<br>
+        if last_number == 1 \<br>
+            or last_number == 3 \<br>
+            or last_number == 5 \<br>
+            or last_number == 7 \<br>
+            or last_number == 9:<br>
+            print("홀수입니다")
+      </td>
+      <td width="310">
+        정수 입력> 52<br>
+        짝수입니다<br>
+        정수입력> 273<br>
+        홀수입니다<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition02.py |</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        last_character = number[-1]<br>
+        <br>
+        #짝수 조건<br>
+        if last_character in "02468":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("짝수입니다")<br>
+        <br>
+        #홀수 조건<br>
+        if last_character in "13579":<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("홀수입니다")<br>
+      </td>
+      <td width="310">
+        정수 입력> 52<br>
+        짝수입니다<br>
+      </td>
+    </tr>
+  </table>
+</div>
+<a onclick="this.nextSibling.style.display=(this.nextSibling.style.display=='none')?'block':'none';" href="javascript:void(0)">
+condition03.py</a><div style="DISPLAY: none">
+<table border="1">
+    <tr>
+      <td width="310">
+        #입력을 받습니다.<br>
+        number = input("정수 입력> ")<br>
+        number = int(number)<br>
+        <br>
+        #짝수 조건<br>
+        if number %2 == 0:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("짝수입니다")<br>
+            <br>
+        # 홀수 조건<br>
+        if number %2 == 1:<br>
+            &nbsp;&nbsp;&nbsp;&nbsp;print("홀수입니다")<br>
+      </td>
+      <td width="310">
+        정수 입력> 52<br>
+        짝수입니다<br>
+      </td>
+    </tr>
+  </table>
+</div><br>
+<br>
+
+
+</p>
+</body>
+</html>
